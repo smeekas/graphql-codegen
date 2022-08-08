@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap');
+.countryList{
+    display: flex;
+    flex-wrap: wrap;
+    /* font-family: 'Mouse Memoirs', sans-serif; */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* letter-spacing: 0.1rem; */
+    font-style: italic;
+    font-size: 2rem;
+    font-variant-caps: all-small-caps
+
+}

@@ -1,0 +1,52 @@
+.backdrop {
+  position: relative;
+}
+.image {
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: black;
+  opacity: 0.55;
+}
+
+.detailsContainer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  /* border: 1px solid red; */
+}
+.name {
+  font-size: 7rem;
+  text-align: center;
+  /* margin-top: 5rem; */
+  mix-blend-mode: lighten;
+  font-family: "Mouse Memoirs", sans-serif;
+  font-weight: 400;
+}
+.native {
+  text-align: center;
+  mix-blend-mode: lighten;
+  font-family: "Mouse Memoirs", sans-serif;
+  font-weight: 400;
+  font-size: 2rem;
+}
+.capital {
+  display: flex;
+  font-size: 2rem;
+  font-style: italic;
+  align-items: center;
+  font-family: "Mouse Memoirs", sans-serif;
+}
+.icon {
+  padding: 0 0.5rem;
+  font-size: 1.5rem;
+}

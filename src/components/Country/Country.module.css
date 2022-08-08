@@ -1,0 +1,33 @@
+.country {
+  padding: 0.5rem;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(197, 228, 255);
+  max-width: 12rem;
+  height: fit-content;
+  align-items: center;
+  /* max-height: 10rem; */
+
+  box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.75);
+}
+.country:hover{
+    box-shadow: none;
+    cursor: pointer;
+}
+.imageContainer {
+  /* flex: 1; */
+  /* max-height: 2rem; */
+}
+.image {
+  width: 100%;
+  /* height: 100%; */
+}
+.countryName {
+  flex: 2;
+}
+.countryName h3 {
+  padding: 0;
+  margin: 0;
+  font-size: 2.1rem;
+}

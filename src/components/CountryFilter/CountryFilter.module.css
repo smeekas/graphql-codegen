@@ -1,0 +1,14 @@
+.filter{
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    width: 100vw;
+}
+
+.filter{
+    font-size: 2rem;
+}
+.input{
+    width: 15rem;
+    font-size: 1.8rem;
+}
