@@ -1,21 +1,17 @@
-import React, { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import styles from "./CountryList.module.css";
 import { useAllCountiresQuery } from "../../graphql/generated/apolloQueries";
 import Country from "../Country/Country";
 import CountryFilter from "../CountryFilter/CountryFilter";
-import { ApolloQueryResult } from "@apollo/client";
 import Loading from "../Loading/Loading";
 function CountryList() {
   const [countries, setCounties] = useState<any[]>([]);
   const [filtered, setFiltered] = useState<string>("");
-  const searchHandler = useCallback(
-    (searchWord: string) => {
-      console.log("CALLBACK");
-      setFiltered(searchWord);
-    },
-    [countries]
-  );
-  const { data, loading, error } = useAllCountiresQuery();
+  const searchHandler = useCallback((searchWord: string) => {
+    console.log("CALLBACK");
+    setFiltered(searchWord);
+  }, []);
+  const { data, loading } = useAllCountiresQuery();
   useEffect(() => {
     if (data) {
       console.log(data);

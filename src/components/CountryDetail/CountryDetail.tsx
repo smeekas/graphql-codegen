@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router";
 import { useCountryDetailQuery } from "../../graphql/generated/apolloQueries";
 import { TbBuildingBank } from "react-icons/tb";
@@ -8,7 +8,7 @@ import styles from "./CountryDetail.module.css";
 import Loading from "../Loading/Loading";
 function CountryDetail() {
   const params = useParams();
-  const { data, error, loading } = useCountryDetailQuery({
+  const { data, loading } = useCountryDetailQuery({
     variables: {
       country: params.id!,
     },
@@ -42,6 +42,7 @@ function CountryDetail() {
       }
       getPhoto();
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data]);
   if (loading || !photo) {
     return <Loading />;
