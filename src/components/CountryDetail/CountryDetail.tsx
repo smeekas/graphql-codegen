@@ -1,4 +1,4 @@
-import  { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router";
 import { useCountryDetailQuery } from "../../graphql/generated/apolloQueries";
 import { TbBuildingBank } from "react-icons/tb";
@@ -19,7 +19,7 @@ function CountryDetail() {
   useEffect(() => {
     async function getPhoto() {
       const res = await fetch(
-        `https://api.pexels.com/v1/search?query=${data?.country?.name}&per_page=1`,
+        `https://api.pexels.com/v1/search?query=${data?.country?.name}&per_page=5`,
         {
           headers: {
             Authorization: process.env.REACT_APP_PEXEL_KEY as string,
@@ -33,7 +33,12 @@ function CountryDetail() {
         setPhoto("black");
         return;
       }
-      setPhoto(countryDetails.photos[0].src.landscape);
+      console.log(countryDetails.photos.length)
+      let i=0,len=countryDetails.photos.length;
+      setInterval(() => {
+        
+        setPhoto(countryDetails.photos[((i++)%len)].src.landscape);
+      }, 3000)
     }
     if (data) {
       if (!data?.country) {
@@ -42,7 +47,7 @@ function CountryDetail() {
       }
       getPhoto();
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data]);
   if (loading || !photo) {
     return <Loading />;
