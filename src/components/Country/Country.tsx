@@ -15,7 +15,7 @@ function Country(props: CountryPropsType) {
       <div className={styles.imageContainer}>
         <img
           className={styles.image}
-          src={`https://countryflagsapi.com/svg/${props.code}`}
+          src={`https://flagcdn.com/${props.code.toLowerCase()}.svg`}
           alt={props.code}
         />
       </div>
